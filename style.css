@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+.inputForm {
+  width: 250px;
+  clear: both;
+}
+
+.inputForm input {
+  width: 100%;
+  clear: both;
+}
+
+#barcodeTable {
+  width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#CSVtitle {
+  display: none;
+}
