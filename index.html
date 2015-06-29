@@ -1,40 +1,77 @@
+<!--
+This file is part of TUBarWeb.
+
+TUBarWeb is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+TUBarWeb is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with TUBarWeb.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>TUBarWeb</title>
-    <script src="jQuery.js"></script>
     <!--<script src="barcode.js"></script>-->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/semantic.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jQuery.js"></script>
+    <script src="js/semantic.min.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Tudor Roman">
   </head>
   
   <body>
-    <h1>TUBarWeb - Ver 1.0</h1>
-    <form>
-      <div class="inputForm">
-        <input id="code" type="text" placeholder="Code" autofocus /> <br />
-        <input id= "no" type="number" placeholder="Quantity" value="1"/><br />
-        <input type="submit" id="save" value="Save" />
-        <input id="list" type="button" value="Full list & Export as CSV" />
-        <input id="reset" type="reset" value="Reset" />
-        <input type="button" id="remove" value="Delete a row" />
+    <main class="ui page grid">
+      <div class="row">
+        <div class="column">
+          <h1 class="ui header">TUBarWeb - Ver 1.0</h1>
+          <p>
+            <form class="ui form">
+              <div class="two fields">
+                <div class="row column field">
+                  <label>Barcode</label>
+                  <div class="ui input"><input id="code" type="text" placeholder="Barcode" autofocus /></div> <br />
+                </div>
+                <div class="field">
+                  <label>Quantity</label>
+                  <div class="ui input"><input id= "no" type="number" placeholder="Quantity" value="1"/></div><br />
+                </div>
+              </div>
+                <input class="ui primary button" type="submit" id="save" value="Save" />
+                <input class="ui button" id="list" type="button" value="Full list & Export as CSV" />
+                <input class="ui button" id="reset" type="reset" value="Reset" />
+                <input class="ui button" type="button" id="remove" value="Delete a row" />
+            </form>
+          </p>
+          <div id="barcodes">
+            <table class="ui table" id="barcodeTable">
+              <tbody>
+                <tr>
+                  <td>Row No.</td>
+                  <td>Code</td>
+                  <td>Quantity</td>
+                  <!--<td>Barcode</td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 id="CSVtitle">CSV Output:</h3>
+          <pre>
+            <div id="csvOutput"></div>
+          </pre>
+        </div>
       </div>
-    </form>
-    <div id="barcodes">
-      <table id="barcodeTable">
-        <tbody>
-          <tr>
-            <td>Row No.</td>
-            <td>Code</td>
-            <td>Quantity</td>
-            <!--<td>Barcode</td> -->
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <h3 id="CSVtitle">CSV Output:</h3>
-    <pre>
-      <div id="csvOutput"></div>
-    </pre>
-    <script src="TUbarweb.js"></script>
+    </main>
+    <script src="js/TUbarweb.js"></script>
+    <script src="js/TUbarweb.js"></script>
   </body>
 </html>
